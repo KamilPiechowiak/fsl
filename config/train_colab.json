@@ -1,0 +1,42 @@
+{
+    "general": {
+        "datasets_path": "data",
+        "results_path": "gdrive/MyDrive/fsl/results",
+        "stage": "pretrain",
+        "meta_split": "train",
+        "dataset": {
+            "name": "CifarFS",
+            "resolution": 32
+        }
+    },
+    "tasks": [
+        {
+            "model": {
+                "name": "Resnet18.64",
+                "num_classes": 64
+            },
+            "learning_rate": 1e-3,
+            "epochs": 100,
+            "scheduler_mocked_epochs": 100,
+            "batch_size": 128,
+            "num_workers": 4,
+            "gradient_accumulation": 1,
+            "persist_state_every": 50,
+            "mixup_alpha": 0.4
+        },
+        {
+            "model": {
+                "name": "WideResnet26.160",
+                "num_classes": 64
+            },
+            "learning_rate": 1e-3,
+            "epochs": 100,
+            "scheduler_mocked_epochs": 100,
+            "batch_size": 32,
+            "num_workers": 4,
+            "gradient_accumulation": 2,
+            "persist_state_every": 50,
+            "mixup_alpha": 0.4
+        }
+    ]
+}

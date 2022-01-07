@@ -1,0 +1,45 @@
+{
+    "general": {
+        "datasets_path": "data",
+        "results_path": "results",
+        "stage": "pretrain",
+        "meta_split": "train",
+        "dataset": {
+            "name": "MiniImageNet",
+            "resolution": 84
+        },
+        "learning_rate": 1e-3,
+        "epochs": 100,
+        "scheduler_mocked_epochs": 100,
+        "num_workers": 8,
+        "persist_state_every": 50,
+        "rotation": 1,
+        "mixup_alpha": 2
+    },
+    "tasks": [
+        {
+            "model": {
+                "name": "WideResnet26.160",
+                "num_classes": 64,
+                "append_to_name": "s2m2-3",
+                "load_path": "results/WideResnet26.160-MiniImageNet-s2m2-2",
+                "load_optimizer": 1
+            },
+            "features_dim": 640,
+            "batch_size": 16,
+            "gradient_accumulation": 1
+        },
+        {
+            "model": {
+                "name": "WideResnet26.160",
+                "num_classes": 64,
+                "append_to_name": "s2m2-cont-3",
+                "load_path": "results/WideResnet26.160-MiniImageNet-s2m2-cont-2",
+                "load_optimizer": 1
+            },
+            "features_dim": 640,
+            "batch_size": 16,
+            "gradient_accumulation": 1
+        } 
+    ]
+}

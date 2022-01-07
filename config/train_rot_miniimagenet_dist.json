@@ -1,0 +1,34 @@
+{
+    "general": {
+        "distributed": 1,
+        "datasets_path": "data",
+        "results_path": "results",
+        "stage": "pretrain",
+        "meta_split": "train",
+        "dataset": {
+            "name": "MiniImageNet",
+            "resolution": 84
+        },
+        "learning_rate": 1e-3,
+        "epochs": 100,
+        "scheduler_mocked_epochs": 100,
+        "num_workers": 0,
+        "persist_state_every": 50,
+        "rotation": 1
+    },
+    "tasks": [
+        {
+            "model": {
+                "name": "WideResnet26.160",
+                "num_classes": 64,
+                "append_to_name": "dist",
+                "load_path": "results/WideResnet26.160-MiniImageNet-2",
+                "load_optimizer": 1
+            },
+            "features_dim": 640,
+            "batch_size": 2,
+            "gradient_accumulation": 2,
+            "repeat": 4
+        }
+    ]
+}

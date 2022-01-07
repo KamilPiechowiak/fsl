@@ -1,0 +1,12 @@
+.vscode
+data
+!src/data
+*.pt
+__pycache__
+config/debug*
+scripts/upload*
+*.png
+*tfevents*
+*.zip
+results
+*ipynb*

@@ -1,0 +1,3 @@
+from .classifier import Classifier
+from .classifiers_factory import get_classifier
+from .gaussian_mixture_model import GaussianMixtureModel

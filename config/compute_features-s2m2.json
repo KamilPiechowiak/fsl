@@ -1,0 +1,22 @@
+{
+    "general": {
+        "datasets_path": "data",
+        "results_path": "results"
+    },
+    "tasks": [
+        {
+            "stage": "compute_features",
+            "meta_split": "test",
+            "dataset": {
+                "name": "MiniImageNet",
+                "resolution": 32
+            },
+            "model": {
+                "name": "TheirWideResNet",
+                "num_classes": 64
+            },
+            "batch_size": 4,
+            "num_workers": 4
+        }
+    ]
+}

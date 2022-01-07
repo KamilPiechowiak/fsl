@@ -1,0 +1,36 @@
+{
+    "general": {
+        "datasets_path": "data",
+        "results_path": "results"
+    },
+    "tasks": [
+        {
+            "stage": "compute_features",
+            "meta_split": "test",
+            "dataset": {
+                "name": "CifarFS",
+                "resolution": 32
+            },
+            "model": {
+                "name": "TheirWideResNet",
+                "num_classes": 64
+            },
+            "batch_size": 64,
+            "num_workers": 8
+        },
+        {
+            "stage": "compute_features",
+            "meta_split": "test",
+            "dataset": {
+                "name": "MiniImageNet",
+                "resolution": 84
+            },
+            "model": {
+                "name": "TheirWideResNet",
+                "num_classes": 64
+            },
+            "batch_size": 16,
+            "num_workers": 8
+        }
+    ]
+}

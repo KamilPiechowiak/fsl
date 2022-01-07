@@ -1,0 +1,65 @@
+{
+    "general": {
+        "datasets_path": "data",
+        "results_path": "results"
+    },
+    "tasks": [
+        {
+            "stage": "pretrain",
+            "meta_split": "train",
+            "dataset": {
+                "name": "CifarFS",
+                "resolution": 32
+            },
+            "model": {
+                "name": "SmallResnet20.16",
+                "num_classes": 64
+            },
+            "learning_rate": 1e-3,
+            "epochs": 100,
+            "scheduler_mocked_epochs": 100,
+            "batch_size": 64,
+            "num_workers": 8,
+            "gradient_accumulation": 1,
+            "persist_state_every": 50
+        },
+        {
+            "stage": "pretrain",
+            "meta_split": "train",
+            "dataset": {
+                "name": "CifarFS",
+                "resolution": 32
+            },
+            "model": {
+                "name": "SmallResnet20.64",
+                "num_classes": 64
+            },
+            "learning_rate": 1e-3,
+            "epochs": 100,
+            "scheduler_mocked_epochs": 100,
+            "batch_size": 64,
+            "num_workers": 8,
+            "gradient_accumulation": 1,
+            "persist_state_every": 50
+        },
+        {
+            "stage": "pretrain",
+            "meta_split": "train",
+            "dataset": {
+                "name": "CifarFS",
+                "resolution": 32
+            },
+            "model": {
+                "name": "resnet18",
+                "num_classes": 64
+            },
+            "learning_rate": 1e-3,
+            "epochs": 100,
+            "scheduler_mocked_epochs": 100,
+            "batch_size": 64,
+            "num_workers": 8,
+            "gradient_accumulation": 1,
+            "persist_state_every": 50
+        }
+    ]
+}

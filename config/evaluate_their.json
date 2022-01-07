@@ -1,0 +1,844 @@
+{
+    "general": {
+        "datasets_path": "data",
+        "results_path": "results",
+        "stage": "classify",
+        "meta_split": "test",
+        "batch_size": 10,
+        "num_workers": 0
+    },
+    "tasks": [
+        {
+            "model": {
+                "name": "TheirWideResNet",
+                "num_classes": 64
+            },
+            "dataset": {
+                "name": "CifarFS",
+                "resolution": 32,
+                "extract_features": 0
+            },
+            "classification": {
+                "num_iterations": 10000,
+                "num_classes": 5,
+                "num_known_samples_per_class": 1,
+                "num_unknown_samples_per_class": 15
+            },
+            "classifier": {
+                "name": "PT_Kmeans"
+            }
+        },
+        {
+            "model": {
+                "name": "TheirWideResNet",
+                "num_classes": 64
+            },
+            "dataset": {
+                "name": "CifarFS",
+                "resolution": 32,
+                "extract_features": 0
+            },
+            "classification": {
+                "num_iterations": 10000,
+                "num_classes": 5,
+                "num_known_samples_per_class": 1,
+                "num_unknown_samples_per_class": 15
+            },
+            "classifier": {
+                "name": "PT_NCM",
+                "preprocess": 1
+            }
+        },
+        {
+            "model": {
+                "name": "TheirWideResNet",
+                "num_classes": 64
+            },
+            "dataset": {
+                "name": "CifarFS",
+                "resolution": 32,
+                "extract_features": 0
+            },
+            "classification": {
+                "num_iterations": 10000,
+                "num_classes": 5,
+                "num_known_samples_per_class": 1,
+                "num_unknown_samples_per_class": 15
+            },
+            "classifier": {
+                "name": "PT_NCM",
+                "preprocess": 0
+            }
+        },
+        {
+            "model": {
+                "name": "TheirWideResNet",
+                "num_classes": 64
+            },
+            "dataset": {
+                "name": "CifarFS",
+                "resolution": 32,
+                "extract_features": 0
+            },
+            "classification": {
+                "num_iterations": 10000,
+                "num_classes": 5,
+                "num_known_samples_per_class": 1,
+                "num_unknown_samples_per_class": 15
+            },
+            "classifier": {
+                "name": "PT"
+            }
+        },
+        {
+            "model": {
+                "name": "TheirWideResNet",
+                "num_classes": 64
+            },
+            "dataset": {
+                "name": "CifarFS",
+                "resolution": 32,
+                "extract_features": 0
+            },
+            "classification": {
+                "num_iterations": 10000,
+                "num_classes": 5,
+                "num_known_samples_per_class": 1,
+                "num_unknown_samples_per_class": 15
+            },
+            "classifier": {
+                "name": "PEME",
+                "epochs": 0,
+                "alpha": 0.01
+            }
+        },
+        {
+            "model": {
+                "name": "TheirWideResNet",
+                "num_classes": 64
+            },
+            "dataset": {
+                "name": "CifarFS",
+                "resolution": 32,
+                "extract_features": 0
+            },
+            "classification": {
+                "num_iterations": 10000,
+                "num_classes": 5,
+                "num_known_samples_per_class": 5,
+                "num_unknown_samples_per_class": 15
+            },
+            "classifier": {
+                "name": "PT_Kmeans"
+            }
+        },
+        {
+            "model": {
+                "name": "TheirWideResNet",
+                "num_classes": 64
+            },
+            "dataset": {
+                "name": "CifarFS",
+                "resolution": 32,
+                "extract_features": 0
+            },
+            "classification": {
+                "num_iterations": 10000,
+                "num_classes": 5,
+                "num_known_samples_per_class": 5,
+                "num_unknown_samples_per_class": 15
+            },
+            "classifier": {
+                "name": "PT_NCM",
+                "preprocess": 1
+            }
+        },
+        {
+            "model": {
+                "name": "TheirWideResNet",
+                "num_classes": 64
+            },
+            "dataset": {
+                "name": "CifarFS",
+                "resolution": 32,
+                "extract_features": 0
+            },
+            "classification": {
+                "num_iterations": 10000,
+                "num_classes": 5,
+                "num_known_samples_per_class": 5,
+                "num_unknown_samples_per_class": 15
+            },
+            "classifier": {
+                "name": "PT_NCM",
+                "preprocess": 0
+            }
+        },
+        {
+            "model": {
+                "name": "TheirWideResNet",
+                "num_classes": 64
+            },
+            "dataset": {
+                "name": "CifarFS",
+                "resolution": 32,
+                "extract_features": 0
+            },
+            "classification": {
+                "num_iterations": 10000,
+                "num_classes": 5,
+                "num_known_samples_per_class": 5,
+                "num_unknown_samples_per_class": 15
+            },
+            "classifier": {
+                "name": "PT"
+            }
+        },
+        {
+            "model": {
+                "name": "TheirWideResNet",
+                "num_classes": 64
+            },
+            "dataset": {
+                "name": "CifarFS",
+                "resolution": 32,
+                "extract_features": 0
+            },
+            "classification": {
+                "num_iterations": 10000,
+                "num_classes": 5,
+                "num_known_samples_per_class": 5,
+                "num_unknown_samples_per_class": 15
+            },
+            "classifier": {
+                "name": "PEME",
+                "epochs": 40,
+                "alpha": 0.01
+            }
+        },
+        {
+            "model": {
+                "name": "TheirWideResNet",
+                "num_classes": 64
+            },
+            "dataset": {
+                "name": "MiniImageNet",
+                "resolution": 84,
+                "extract_features": 0
+            },
+            "classification": {
+                "num_iterations": 10000,
+                "num_classes": 5,
+                "num_known_samples_per_class": 1,
+                "num_unknown_samples_per_class": 15
+            },
+            "classifier": {
+                "name": "PT_Kmeans"
+            }
+        },
+        {
+            "model": {
+                "name": "TheirWideResNet",
+                "num_classes": 64
+            },
+            "dataset": {
+                "name": "MiniImageNet",
+                "resolution": 84,
+                "extract_features": 0
+            },
+            "classification": {
+                "num_iterations": 10000,
+                "num_classes": 5,
+                "num_known_samples_per_class": 1,
+                "num_unknown_samples_per_class": 15
+            },
+            "classifier": {
+                "name": "PT_NCM",
+                "preprocess": 1
+            }
+        },
+        {
+            "model": {
+                "name": "TheirWideResNet",
+                "num_classes": 64
+            },
+            "dataset": {
+                "name": "MiniImageNet",
+                "resolution": 84,
+                "extract_features": 0
+            },
+            "classification": {
+                "num_iterations": 10000,
+                "num_classes": 5,
+                "num_known_samples_per_class": 1,
+                "num_unknown_samples_per_class": 15
+            },
+            "classifier": {
+                "name": "PT_NCM",
+                "preprocess": 0
+            }
+        },
+        {
+            "model": {
+                "name": "TheirWideResNet",
+                "num_classes": 64
+            },
+            "dataset": {
+                "name": "MiniImageNet",
+                "resolution": 84,
+                "extract_features": 0
+            },
+            "classification": {
+                "num_iterations": 10000,
+                "num_classes": 5,
+                "num_known_samples_per_class": 1,
+                "num_unknown_samples_per_class": 15
+            },
+            "classifier": {
+                "name": "PT"
+            }
+        },
+        {
+            "model": {
+                "name": "TheirWideResNet",
+                "num_classes": 64
+            },
+            "dataset": {
+                "name": "MiniImageNet",
+                "resolution": 84,
+                "extract_features": 0
+            },
+            "classification": {
+                "num_iterations": 10000,
+                "num_classes": 5,
+                "num_known_samples_per_class": 1,
+                "num_unknown_samples_per_class": 15
+            },
+            "classifier": {
+                "name": "PEME",
+                "epochs": 0,
+                "alpha": 0.01
+            }
+        },
+        {
+            "model": {
+                "name": "TheirWideResNet",
+                "num_classes": 64
+            },
+            "dataset": {
+                "name": "MiniImageNet",
+                "resolution": 84,
+                "extract_features": 0
+            },
+            "classification": {
+                "num_iterations": 10000,
+                "num_classes": 5,
+                "num_known_samples_per_class": 5,
+                "num_unknown_samples_per_class": 15
+            },
+            "classifier": {
+                "name": "PT_Kmeans"
+            }
+        },
+        {
+            "model": {
+                "name": "TheirWideResNet",
+                "num_classes": 64
+            },
+            "dataset": {
+                "name": "MiniImageNet",
+                "resolution": 84,
+                "extract_features": 0
+            },
+            "classification": {
+                "num_iterations": 10000,
+                "num_classes": 5,
+                "num_known_samples_per_class": 5,
+                "num_unknown_samples_per_class": 15
+            },
+            "classifier": {
+                "name": "PT_NCM",
+                "preprocess": 1
+            }
+        },
+        {
+            "model": {
+                "name": "TheirWideResNet",
+                "num_classes": 64
+            },
+            "dataset": {
+                "name": "MiniImageNet",
+                "resolution": 84,
+                "extract_features": 0
+            },
+            "classification": {
+                "num_iterations": 10000,
+                "num_classes": 5,
+                "num_known_samples_per_class": 5,
+                "num_unknown_samples_per_class": 15
+            },
+            "classifier": {
+                "name": "PT_NCM",
+                "preprocess": 0
+            }
+        },
+        {
+            "model": {
+                "name": "TheirWideResNet",
+                "num_classes": 64
+            },
+            "dataset": {
+                "name": "MiniImageNet",
+                "resolution": 84,
+                "extract_features": 0
+            },
+            "classification": {
+                "num_iterations": 10000,
+                "num_classes": 5,
+                "num_known_samples_per_class": 5,
+                "num_unknown_samples_per_class": 15
+            },
+            "classifier": {
+                "name": "PT"
+            }
+        },
+        {
+            "model": {
+                "name": "TheirWideResNet",
+                "num_classes": 64
+            },
+            "dataset": {
+                "name": "MiniImageNet",
+                "resolution": 84,
+                "extract_features": 0
+            },
+            "classification": {
+                "num_iterations": 10000,
+                "num_classes": 5,
+                "num_known_samples_per_class": 5,
+                "num_unknown_samples_per_class": 15
+            },
+            "classifier": {
+                "name": "PEME",
+                "epochs": 40,
+                "alpha": 0.01
+            }
+        },
+        {
+            "model": {
+                "name": "TheirWideResNet_Features",
+                "num_classes": 64
+            },
+            "dataset": {
+                "name": "CifarFS",
+                "resolution": 32,
+                "extract_features": 0
+            },
+            "classification": {
+                "num_iterations": 10000,
+                "num_classes": 5,
+                "num_known_samples_per_class": 1,
+                "num_unknown_samples_per_class": 15
+            },
+            "classifier": {
+                "name": "PT_Kmeans"
+            }
+        },
+        {
+            "model": {
+                "name": "TheirWideResNet_Features",
+                "num_classes": 64
+            },
+            "dataset": {
+                "name": "CifarFS",
+                "resolution": 32,
+                "extract_features": 0
+            },
+            "classification": {
+                "num_iterations": 10000,
+                "num_classes": 5,
+                "num_known_samples_per_class": 1,
+                "num_unknown_samples_per_class": 15
+            },
+            "classifier": {
+                "name": "PT_NCM",
+                "preprocess": 1
+            }
+        },
+        {
+            "model": {
+                "name": "TheirWideResNet_Features",
+                "num_classes": 64
+            },
+            "dataset": {
+                "name": "CifarFS",
+                "resolution": 32,
+                "extract_features": 0
+            },
+            "classification": {
+                "num_iterations": 10000,
+                "num_classes": 5,
+                "num_known_samples_per_class": 1,
+                "num_unknown_samples_per_class": 15
+            },
+            "classifier": {
+                "name": "PT_NCM",
+                "preprocess": 0
+            }
+        },
+        {
+            "model": {
+                "name": "TheirWideResNet_Features",
+                "num_classes": 64
+            },
+            "dataset": {
+                "name": "CifarFS",
+                "resolution": 32,
+                "extract_features": 0
+            },
+            "classification": {
+                "num_iterations": 10000,
+                "num_classes": 5,
+                "num_known_samples_per_class": 1,
+                "num_unknown_samples_per_class": 15
+            },
+            "classifier": {
+                "name": "PT"
+            }
+        },
+        {
+            "model": {
+                "name": "TheirWideResNet_Features",
+                "num_classes": 64
+            },
+            "dataset": {
+                "name": "CifarFS",
+                "resolution": 32,
+                "extract_features": 0
+            },
+            "classification": {
+                "num_iterations": 10000,
+                "num_classes": 5,
+                "num_known_samples_per_class": 1,
+                "num_unknown_samples_per_class": 15
+            },
+            "classifier": {
+                "name": "PEME",
+                "epochs": 0,
+                "alpha": 0.01
+            }
+        },
+        {
+            "model": {
+                "name": "TheirWideResNet_Features",
+                "num_classes": 64
+            },
+            "dataset": {
+                "name": "CifarFS",
+                "resolution": 32,
+                "extract_features": 0
+            },
+            "classification": {
+                "num_iterations": 10000,
+                "num_classes": 5,
+                "num_known_samples_per_class": 5,
+                "num_unknown_samples_per_class": 15
+            },
+            "classifier": {
+                "name": "PT_Kmeans"
+            }
+        },
+        {
+            "model": {
+                "name": "TheirWideResNet_Features",
+                "num_classes": 64
+            },
+            "dataset": {
+                "name": "CifarFS",
+                "resolution": 32,
+                "extract_features": 0
+            },
+            "classification": {
+                "num_iterations": 10000,
+                "num_classes": 5,
+                "num_known_samples_per_class": 5,
+                "num_unknown_samples_per_class": 15
+            },
+            "classifier": {
+                "name": "PT_NCM",
+                "preprocess": 1
+            }
+        },
+        {
+            "model": {
+                "name": "TheirWideResNet_Features",
+                "num_classes": 64
+            },
+            "dataset": {
+                "name": "CifarFS",
+                "resolution": 32,
+                "extract_features": 0
+            },
+            "classification": {
+                "num_iterations": 10000,
+                "num_classes": 5,
+                "num_known_samples_per_class": 5,
+                "num_unknown_samples_per_class": 15
+            },
+            "classifier": {
+                "name": "PT_NCM",
+                "preprocess": 0
+            }
+        },
+        {
+            "model": {
+                "name": "TheirWideResNet_Features",
+                "num_classes": 64
+            },
+            "dataset": {
+                "name": "CifarFS",
+                "resolution": 32,
+                "extract_features": 0
+            },
+            "classification": {
+                "num_iterations": 10000,
+                "num_classes": 5,
+                "num_known_samples_per_class": 5,
+                "num_unknown_samples_per_class": 15
+            },
+            "classifier": {
+                "name": "PT"
+            }
+        },
+        {
+            "model": {
+                "name": "TheirWideResNet_Features",
+                "num_classes": 64
+            },
+            "dataset": {
+                "name": "CifarFS",
+                "resolution": 32,
+                "extract_features": 0
+            },
+            "classification": {
+                "num_iterations": 10000,
+                "num_classes": 5,
+                "num_known_samples_per_class": 5,
+                "num_unknown_samples_per_class": 15
+            },
+            "classifier": {
+                "name": "PEME",
+                "epochs": 40,
+                "alpha": 0.01
+            }
+        },
+        {
+            "model": {
+                "name": "TheirWideResNet_Features",
+                "num_classes": 64
+            },
+            "dataset": {
+                "name": "MiniImageNet",
+                "resolution": 84,
+                "extract_features": 0
+            },
+            "classification": {
+                "num_iterations": 10000,
+                "num_classes": 5,
+                "num_known_samples_per_class": 1,
+                "num_unknown_samples_per_class": 15
+            },
+            "classifier": {
+                "name": "PT_Kmeans"
+            }
+        },
+        {
+            "model": {
+                "name": "TheirWideResNet_Features",
+                "num_classes": 64
+            },
+            "dataset": {
+                "name": "MiniImageNet",
+                "resolution": 84,
+                "extract_features": 0
+            },
+            "classification": {
+                "num_iterations": 10000,
+                "num_classes": 5,
+                "num_known_samples_per_class": 1,
+                "num_unknown_samples_per_class": 15
+            },
+            "classifier": {
+                "name": "PT_NCM",
+                "preprocess": 1
+            }
+        },
+        {
+            "model": {
+                "name": "TheirWideResNet_Features",
+                "num_classes": 64
+            },
+            "dataset": {
+                "name": "MiniImageNet",
+                "resolution": 84,
+                "extract_features": 0
+            },
+            "classification": {
+                "num_iterations": 10000,
+                "num_classes": 5,
+                "num_known_samples_per_class": 1,
+                "num_unknown_samples_per_class": 15
+            },
+            "classifier": {
+                "name": "PT_NCM",
+                "preprocess": 0
+            }
+        },
+        {
+            "model": {
+                "name": "TheirWideResNet_Features",
+                "num_classes": 64
+            },
+            "dataset": {
+                "name": "MiniImageNet",
+                "resolution": 84,
+                "extract_features": 0
+            },
+            "classification": {
+                "num_iterations": 10000,
+                "num_classes": 5,
+                "num_known_samples_per_class": 1,
+                "num_unknown_samples_per_class": 15
+            },
+            "classifier": {
+                "name": "PT"
+            }
+        },
+        {
+            "model": {
+                "name": "TheirWideResNet_Features",
+                "num_classes": 64
+            },
+            "dataset": {
+                "name": "MiniImageNet",
+                "resolution": 84,
+                "extract_features": 0
+            },
+            "classification": {
+                "num_iterations": 10000,
+                "num_classes": 5,
+                "num_known_samples_per_class": 1,
+                "num_unknown_samples_per_class": 15
+            },
+            "classifier": {
+                "name": "PEME",
+                "epochs": 0,
+                "alpha": 0.01
+            }
+        },
+        {
+            "model": {
+                "name": "TheirWideResNet_Features",
+                "num_classes": 64
+            },
+            "dataset": {
+                "name": "MiniImageNet",
+                "resolution": 84,
+                "extract_features": 0
+            },
+            "classification": {
+                "num_iterations": 10000,
+                "num_classes": 5,
+                "num_known_samples_per_class": 5,
+                "num_unknown_samples_per_class": 15
+            },
+            "classifier": {
+                "name": "PT_Kmeans"
+            }
+        },
+        {
+            "model": {
+                "name": "TheirWideResNet_Features",
+                "num_classes": 64
+            },
+            "dataset": {
+                "name": "MiniImageNet",
+                "resolution": 84,
+                "extract_features": 0
+            },
+            "classification": {
+                "num_iterations": 10000,
+                "num_classes": 5,
+                "num_known_samples_per_class": 5,
+                "num_unknown_samples_per_class": 15
+            },
+            "classifier": {
+                "name": "PT_NCM",
+                "preprocess": 1
+            }
+        },
+        {
+            "model": {
+                "name": "TheirWideResNet_Features",
+                "num_classes": 64
+            },
+            "dataset": {
+                "name": "MiniImageNet",
+                "resolution": 84,
+                "extract_features": 0
+            },
+            "classification": {
+                "num_iterations": 10000,
+                "num_classes": 5,
+                "num_known_samples_per_class": 5,
+                "num_unknown_samples_per_class": 15
+            },
+            "classifier": {
+                "name": "PT_NCM",
+                "preprocess": 0
+            }
+        },
+        {
+            "model": {
+                "name": "TheirWideResNet_Features",
+                "num_classes": 64
+            },
+            "dataset": {
+                "name": "MiniImageNet",
+                "resolution": 84,
+                "extract_features": 0
+            },
+            "classification": {
+                "num_iterations": 10000,
+                "num_classes": 5,
+                "num_known_samples_per_class": 5,
+                "num_unknown_samples_per_class": 15
+            },
+            "classifier": {
+                "name": "PT"
+            }
+        },
+        {
+            "model": {
+                "name": "TheirWideResNet_Features",
+                "num_classes": 64
+            },
+            "dataset": {
+                "name": "MiniImageNet",
+                "resolution": 84,
+                "extract_features": 0
+            },
+            "classification": {
+                "num_iterations": 10000,
+                "num_classes": 5,
+                "num_known_samples_per_class": 5,
+                "num_unknown_samples_per_class": 15
+            },
+            "classifier": {
+                "name": "PEME",
+                "epochs": 40,
+                "alpha": 0.01
+            }
+        }
+    ]
+}

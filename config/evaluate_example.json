@@ -1,0 +1,64 @@
+{
+    "general": {
+        "datasets_path": "data",
+        "results_path": "results",
+        "stage": "classify",
+        "meta_split": "test",
+        "dataset": {
+            "name": "CifarFS",
+            "resolution": 32,
+            "extract_features": 0
+        },
+        "classification": {
+            "num_iterations": 25,
+            "num_classes": 5,
+            "num_known_samples_per_class": 1,
+            "num_unknown_samples_per_class": 15
+        },
+        "model": {
+            "name": "WideResnet26.160",
+            "append_to_name": "lr2",
+            "num_classes": 64
+        },
+        "batch_size": 10,
+        "num_workers": 2
+    },
+    "tasks": [
+        {
+            "classifier": {
+                "name": "PT_Kmeans"
+            }
+        },
+        {
+            "classifier": {
+                "name": "PT_NCM",
+                "preprocess": 1
+            }
+        },
+        {
+            "classifier": {
+                "name": "PT_NCM",
+                "preprocess": 0
+            }
+        },
+        {
+            "classifier": {
+                "name": "PT"
+            }
+        },
+        {
+            "classifier": {
+                "name": "PEME",
+                "epochs": 0,
+                "alpha": 1e-2
+            }   
+        },
+        {
+            "classifier": {
+                "name": "PEME",
+                "epochs": 20,
+                "alpha": 1e-2
+            }   
+        }
+    ]
+}

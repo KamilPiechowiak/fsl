@@ -1,0 +1,93 @@
+{
+    "general": {
+        "datasets_path": "data",
+        "results_path": "results",
+        "stage": "compute_features",
+        "meta_split": "test",
+        "num_workers": 8
+    },
+    "tasks": [
+        {
+            "dataset": {
+                "name": "CifarFS",
+                "resolution": 32
+            },
+            "model": {
+                "name": "Resnet18.64",
+                "append_to_name": "lr2",
+                "num_classes": 64
+            },
+            "batch_size": 64
+        },
+        {
+            "dataset": {
+                "name": "CifarFS",
+                "resolution": 32
+            },
+            "model": {
+                "name": "Resnet18.64",
+                "append_to_name": "s2m2-long",
+                "num_classes": 64
+            },
+            "batch_size": 64
+        },
+        {
+            "dataset": {
+                "name": "CifarFS",
+                "resolution": 32
+            },
+            "model": {
+                "name": "WideResnet26.160",
+                "append_to_name": "lr2",
+                "num_classes": 64
+            },
+            "batch_size": 64
+        },
+        {
+            "dataset": {
+                "name": "CifarFS",
+                "resolution": 32
+            },
+            "model": {
+                "name": "WideResnet26.160",
+                "append_to_name": "s2m2-cont",
+                "num_classes": 64
+            },
+            "batch_size": 64
+        },
+        {
+            "dataset": {
+                "name": "MiniImageNet",
+                "resolution": 84
+            },
+            "model": {
+                "name": "Resnet18.64",
+                "num_classes": 64
+            },
+            "batch_size": 64
+        },
+        {
+            "dataset": {
+                "name": "MiniImageNet",
+                "resolution": 84
+            },
+            "model": {
+                "name": "Resnet18.64",
+                "append_to_name": "s2m2-cont",
+                "num_classes": 64
+            },
+            "batch_size": 64
+        },
+        {
+            "dataset": {
+                "name": "MiniImageNet",
+                "resolution": 84
+            },
+            "model": {
+                "name": "WideResnet26.160",
+                "num_classes": 64
+            },
+            "batch_size": 64
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+# Few-Shot Learning
+
+This repository contains a reimplementation of the following paper: [Squeezing Backbone Feature Distributions to the Max for Efficient Few-Shot Learning](https://arxiv.org/pdf/2110.09446v1.pdf) \[1\]. Algorithms presented in this work are the extension of the methods used in the following paper: [Leveraging the Feature Distribution
+in Transfer-based Few-Shot Learning](https://arxiv.org/pdf/2006.03806v3.pdf) \[2\]. That is why we also implemented algorithms from the second paper.
+In the Few-Shot Learning the data is divided into 3 sets: *D_meta-train*, *D_meta-val*, *D_meta-test*. The datasets contain pairwise disjoint sets of classes. *D_meta-train* contains labeled samples to pretrain your model (in this scenario a backbone neural network). *D_meta-val* can be used to create small datasets to adjust a few-shot learning algorithm. For this purpose, *n* classes are sampled and for each class *s* training and *q* test examples are sampled. The task is to use *ns* training samples to adapt a classifer to correctly recognize *nq* samples. *D_meta-test* is used to evaluate the performance of the model on the previously unseen data.
+
+The reimplemented papers utilize *D_meta-train* to train a backbone network which is later used as a feature extractor. Few-shot classification is performed using features computed with the backbone and then applying various algorithms on a set of feature vectors.
+
+## Backbone training
+We reimplemented two backbone networks [ResNet18](src/feature_extractors/models/resnet.py) and [WideResnet26](src/feature_extractors/models/wide_resnet.py). The authors have also used ResNet12, but there is neither description nor the code of the architecture available. The question about ResNet12 on [github](https://github.com/yhu01/PT-MAP/issues/26) remains unanswered.
+At first, we thought that the networks were trained using standard classification objective with the cross entropy error. However that approach did not give satisfactory results. We found that the authors followed [Charting the Right Manifold: Manifold Mixup for Few-shot Learning](https://arxiv.org/pdf/1907.12087.pdf) \[3\]. The backbones' training consists of two phases. In the first stage, each input image is rotated by different angles and the auxiliary goal of the model is to predict the rotation angle. A set of 4 rotation angles was used: {0°, 90°, 180°, 270°}. Additionally, classification loss is used. In the second phase, model is fine-tuned with Manifold Mixup. It is a modification of a mixup augmentation technique which can be applied not only to the input of the network but also to the input of any layer. Along with Manifold Mixup loss, rotation and classification losses are also used. The goal of the Manifold Mixup is to create nicely separated groups for different classes, so that when new classes arrive they have *free space* in the space of features.
+The training of a model is implemented in [feature_extrator.py](src/feature_extractors/feature_extractor.py).
+
+## Features computation
+Computing features for each sample is the most computationally expensive step in the implemented few-shot classification algorithms. That is why we compute features for every image in the *D_meta-val* and *D_meta-test* datasets in advance and then use them as inputs to the classification algorithm.
+
+## Few-shot classification
+We implemented classification algorithms present in both papers: [PT+NCM](src/classifiers/pt_ncm.py), [PT+K-means](src/classifiers/pt_kmeans.py), [PT+MAP](src/classifiers/pt.py), [PEME-BMS](src/classifiers/peme.py). We originally planned to reproduce values computed by the authors in tables 1 and 2 in paper \[1\], but as more algorithms were implemented we should be able to reproduce parts of table 5 in \[2\] and table 4 in \[1\].
+
+## Training
+We execute training on a SLURM cluster. Example script is available [here](scripts/run.sh). Unfortunately, due to computational costs we had to constrain ourselves to 2 datasets (CifarFS and MiniImageNet). All backbones on CifarFS as well as ResNet18 on MiniImageNet are already trained. WideResnet26 on MiniImageNet is currently in the second stage of training (Manifold Mixup).
+The authors made the WideResNet weights and features available on both datasets. We will compare results obtained with their and our weights.

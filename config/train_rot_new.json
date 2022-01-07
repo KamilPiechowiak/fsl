@@ -1,0 +1,43 @@
+{
+    "general": {
+        "datasets_path": "data",
+        "results_path": "results",
+        "stage": "pretrain",
+        "meta_split": "train",
+        "dataset": {
+            "name": "CifarFS",
+            "resolution": 32
+        },
+        "learning_rate": 1e-3,
+        "epochs": 100,
+        "scheduler_mocked_epochs": 200,
+        "num_workers": 8,
+        "persist_state_every": 50,
+        "mixup_alpha": 2,
+        "rotation": 1
+    },
+    "tasks": [
+        {
+            "model": {
+                "name": "Resnet18.64",
+                "num_classes": 64,
+                "append_to_name": "s2m2-long",
+                "load_path": "results/Resnet18.64-CifarFS-rotation"
+            },
+            "features_dim": 512,
+            "batch_size": 64,
+            "gradient_accumulation": 1
+        },
+        {
+            "model": {
+                "name": "WideResnet26.160",
+                "num_classes": 64,
+                "append_to_name": "s2m2-long",
+                "load_path": "results/WideResnet26.160-CifarFS-rotation"
+            },
+            "features_dim": 640,
+            "batch_size": 16,
+            "gradient_accumulation": 2
+        }
+    ]
+}
